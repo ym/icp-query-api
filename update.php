@@ -46,7 +46,7 @@ if ($match) {
     $tlds = array_merge($tlds, $matches[1]);
 }
 
-array_unique($tlds);
+$tlds = array_unique($tlds);
 usort($tlds, 'sort_tld');
 
 file_put_contents(TLDS_JSON, json_encode($tlds));
